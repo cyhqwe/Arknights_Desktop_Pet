@@ -15,3 +15,8 @@ reasonix.toml
 .reasonix/
 .idea/
 .vscode/
+
+# ---- build output ----
+dist/
+build/
+*.spec

@@ -3,11 +3,20 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
+
+def _app_root() -> Path:
+    """应用根目录:打包后为 exe 所在目录,开发时为项目根。"""
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent.parent
+
+
 # 项目根目录(本文件位于 <root>/pet/config.py)
-ROOT_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = _app_root()
 RES_DIR = ROOT_DIR / "resources" / "Wis'adel"
 CONFIG_PATH = ROOT_DIR / "config.json"
 
