@@ -1,0 +1,17 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- runtime generated (personal data / assets) ----
+config.json
+resources/
+*.log
+
+# ---- tooling / IDE ----
+reasonix.toml
+.reasonix/
+.idea/
+.vscode/
